@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+{% extends 'header.html' %}
+
+<body>
+    
+
+    {% block content %}
+    
+   
+    <div class="container">
+        <div class="p-4 m-8">
+            <div class="col-lg-4 mt-4 mb-4 mx-auto border rounded p-3 pt-4">
+                <h3 class="alert alert-light border rounded mt-4 mb-4" align="center">LOGIN FORM </h3>
+                <form action="/login" method="post">
+                    {%csrf_token%}
+                    {% if error %}
+                    <div class="alert alert-danger" role="alert">
+                        {{error}}
+                    </div>
+                    {%endif%}
+
+                    <div class="form-group">
+                        <label for="">Email</label>
+                        <input type="email" name="email" id="" value="{{values.email}}" class="form-control "
+                            placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Password</label>
+                        <input type="password" name="password" id="" class="form-control " placeholder="">
+                    </div><br>
+                    </p>
+
+                    <div class="form-group ">
+                            <input class="btn btn-info col-lg-12" type="submit" value="LOGIN">
+                    </div>
+                    <p><a href="#">Forget Password?</a> <span>or New Member </span><a href="/signup"> SignUp</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    {%endblock%}
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up</title>
+</head>
+
+<body>
+    {% extends 'header.html' %}
+
+    {% block content %}
+    <div class="container">
+        <div class="p-4 m-4">
+            <div class="col-lg-5 mx-auto border rounded p-3 pt-4">
+                <h3 class="alert alert-light border rounded" align="center" >CREATE AN ACCOUNT </h3>
+                <form action="/signup" method="post">
+                    {%csrf_token%}
+                    {% if error %}
+                   <div class="alert alert-danger" role="alert">
+                     {{error}}
+                   </div>
+                   {%endif%}
+                    <div class="form-group">
+                        <label for="">First Name</label>
+                        <input type="text" name="firstname" id="" value="{{values.firstname}}" class="form-control " placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Last Name</label>
+                        <input type="text" name="lastname" id="" value="{{values.lastname}}" class="form-control " placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Email</label>
+                        <input type="email" name="email" id="" value="{{values.email}}" class="form-control " placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Password</label>
+                        <input type="password" name="password" id="" class="form-control " placeholder="">
+                    </div><br>
+                    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+                    <div class="form-group ">
+                        
+                        <input class="btn btn-info col-lg-12" type="submit" value="SIGN UP">
+                    </div>
+                    <p>Already have account? <a href="/login">Login</a></p>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {%endblock%}
+</body>
+
+</html>

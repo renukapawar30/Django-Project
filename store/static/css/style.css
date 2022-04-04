@@ -1,0 +1,19 @@
+.container.content img{
+    background-color: #cfd8dc;
+}
+
+.login{
+    text-align: center;
+    border: 2px solid rgb(0, 0, 0);
+    background-color:#4B97D8;
+    text-transform: capitalize;
+}
+
+.login label{
+    text-transform: capitalize;
+    font-style: bold;
+}
+
+.bg{
+    background-color: #94bbe9;
+}
